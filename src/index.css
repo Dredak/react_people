@@ -22,4 +22,25 @@ code {
 .root {
   flex: 1 0 auto;
 } */
-    
+#root {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.card {
+  width: 29%;
+ float: left;
+ margin: 10px;
+}
+
+.clearfix::before, .clearfix::after{
+  content: "";
+  display: table;
+}
+.clearfix::after {
+  clear: both;
+}
+.fas{
+  cursor: pointer;
+  margin-right: 20px;
+}

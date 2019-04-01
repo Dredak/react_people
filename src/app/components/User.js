@@ -7,7 +7,7 @@ class User extends React.Component {
     }
 
     render() {
-        const { name, surname, image, email, birthday } = this.props;
+        const { name, surname, image, email, birthday } = this.props.user;
         return (
 
             <ul className="collection">

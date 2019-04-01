@@ -12,20 +12,15 @@ class Main extends React.Component {
         }
 
         return (
-            users.map((user, i) => (
+            <div className="clearfix container">
+         {   users.map((user, i) => (
                 useListLayout
-                    ? <User name={user.name}
-                        surname={user.surname}
-                        image={user.image}
-                        email={user.email}
-                        birthday={user.birthday}
+                    ? <User user={user}
                         key={i} />
-                    : <UserCard name={user.name}
-                        image={user.image}
-                        email={user.email}
-                        birthday={user.birthday}
+                    : <UserCard user={user}
                         key={i} />
-            ))
+            ))}
+            </div>
         )
     }
 

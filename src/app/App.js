@@ -36,7 +36,7 @@ class App extends Component {
 
     return (
       <>
-        <Header onSwitchClick={this.onToggleLayoutClick} />
+        <Header onSwitchClick={this.onToggleLayoutClick} useListLayout={useListLayout} />
         <Main users={users} useListLayout={useListLayout} />
         <Footer />
       </>);
