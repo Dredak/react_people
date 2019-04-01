@@ -7,4 +7,5 @@ class MyUser {
         this.birthday = birthday
     }
 }
+
 export default MyUser
