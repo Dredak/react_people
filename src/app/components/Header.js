@@ -11,7 +11,7 @@ class Header extends React.Component {
                     <a href="#" className="brand-logo center">React Users</a>
                     {useListLayout ? <i onClick={onSwitchClick} className="fas fa-th-large right"></i> :
                         <i onClick={onSwitchClick} className="fas fa-list right"></i>}
-                    <i onClick={refresh} class="fas fa-redo-alt right"></i>
+                    <i onClick={refresh} className="fas fa-redo-alt right"></i>
                 </div>
             </nav>
         )
