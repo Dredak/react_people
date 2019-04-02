@@ -10,7 +10,7 @@ class App extends Component {
   state = {
     users: [],
     useListLayout: true,
-    searchValue: []
+    searchValue: []  //mora biti ova vrednost u state-u kako bi je kasnije izmenili prilikom unosa vrednosti u input
   };
 
   onToggleLayoutClick = () => { //mora biti anonimna func kad novi state zavisi od prethodnog stanja state-a
@@ -35,9 +35,9 @@ class App extends Component {
     this.loadUsers()
   }
 
-  onSearchType = (e) => {
+  onSearchType = (e) => { //event argument koji se kreira prilikom unosenja vrednosi u search, func se pokrece na promenu vrednosti  u searchu
     const inputSearchValue = e.target.value
-    const users = this.state.users.filter((user) => {
+    const users = this.state.users.filter((user) => { // pomeriti u render srediti drugi niz da bude e.target.value
       return user.name.includes(inputSearchValue);
     })
     this.setState({ searchValue: users }) //novokreiran niz koji smo isfiltrirali koji se nalazi u users postavljas kao vrednost od statea (searchValue)
@@ -49,11 +49,11 @@ class App extends Component {
 
   render() {
     const { users, useListLayout, searchValue } = this.state;
-
+    // const asd = this.state.searchValue 
     return (
       <>
         <Header onSwitchClick={this.onToggleLayoutClick} useListLayout={useListLayout} refresh={this.onRefreshClick} />
-        <Main users={searchValue} useListLayout={useListLayout} search={this.onSearchType} />
+        <Main searchValueUsers={searchValue} useListLayout={useListLayout} search={this.onSearchType} />
         <Footer />
       </>);
 
