@@ -10,7 +10,10 @@ class Main extends React.Component {
         const { searchValueUsers, useListLayout, search } = this.props;
 
         if (!searchValueUsers.length) {
-            return <Loader />
+            return  (<>
+            <Search search={search} />  
+             <Loader />
+             </>)
         }
 
         return (
