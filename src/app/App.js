@@ -16,7 +16,7 @@ class App extends Component {
   onToggleLayoutClick = () => { //mora biti anonimna func kad novi state zavisi od prethodnog stanja state-a
     this.setState((prevState) => {
       localStorage.setItem("isList", !this.state.useListLayout); // <= pitati da li je ovo ispravno fitur za local storage
-      return {useListLayout: !prevState.useListLayout };
+      return {useListLayout: !prevState.useListLayout};
     });
   };
 
@@ -48,7 +48,7 @@ class App extends Component {
     const filteredUsers = users.filter((user) => {
       return user.name.includes(searchValue);
     })
-    
+
     return (
       <>
         <Header onSwitchClick={this.onToggleLayoutClick} useListLayout={useListLayout} refresh={this.onRefreshClick} />

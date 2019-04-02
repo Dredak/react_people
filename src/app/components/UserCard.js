@@ -13,7 +13,7 @@ const UserCard = (props) => {
 
     return (<div className={`card ${color}`}>
         <div className="card-image">
-            <img src={image} />
+            <img src={image} alt="profile"/>
             <span className="card-title">{name}</span>
         </div>
         <div className="card-content">

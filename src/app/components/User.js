@@ -2,10 +2,7 @@ import React from 'react';
 import emailHider from './../../services/emailHider'
 
 class User extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
+    
     render() {
         const { name, surname, image, email, birthday } = this.props.user;
         return (
