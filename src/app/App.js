@@ -12,13 +12,13 @@ class App extends Component {
     useListLayout: true
   };
 
-  onToggleLayoutClick = () => {
-    this.setState((state) => {
-      return { useListLayout: !state.useListLayout };
+  onToggleLayoutClick = () => { //mora biti anonimna func kad novi state zavisi od prethodnog stanja state-a
+    this.setState((prevState) => {
+      return { useListLayout: !prevState.useListLayout };
     });
   };
 
-  setUsers() {
+  loadUsers() {
     fetchUsers()
       .then((myUsers) => {
         this.setState({
@@ -27,8 +27,12 @@ class App extends Component {
       })
   }
 
-  componentDidMount() {
-    this.setUsers()
+  onRefreshClick = () => {  //ovde mora biti anfn func, refreshuje usere
+    this.loadUsers()
+  }
+
+  componentDidMount() {   //funkcija koja se aktivira tik pred renderovanje stranice
+    this.loadUsers()
   }
 
   render() {
@@ -36,7 +40,7 @@ class App extends Component {
 
     return (
       <>
-        <Header onSwitchClick={this.onToggleLayoutClick} useListLayout={useListLayout} />
+        <Header onSwitchClick={this.onToggleLayoutClick} useListLayout={useListLayout} refresh={this.onRefreshClick} />
         <Main users={users} useListLayout={useListLayout} />
         <Footer />
       </>);

@@ -15,3 +15,4 @@ const fetchUsers = () => {
 }
 
 export default fetchUsers;
+
