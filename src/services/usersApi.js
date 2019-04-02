@@ -8,8 +8,8 @@ const fetchUsers = () => {
     return fetch(USERS_API)
         .then((rawUsers) => rawUsers.json())
         .then((users) => {
-            return users.results.map(({ name, picture, email, dob }) => {
-                return new MyUser(name.first, name.last, picture.thumbnail, email, dob.date);
+            return users.results.map(({ name, picture, email, dob, gender }) => {
+                return new MyUser(name.first, name.last, picture.large, email, dob.date, gender);
             })
         });
 }

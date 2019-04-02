@@ -44,3 +44,7 @@ code {
   cursor: pointer;
   margin-right: 20px;
 }
+
+.female-color{
+  background-color: pink;
+}

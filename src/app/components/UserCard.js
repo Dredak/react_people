@@ -3,24 +3,27 @@ import emailHider from './../../services/emailHider'
 
 const UserCard = (props) => {
 
-    const { name, image, email, birthday } = props.user;
-    return (
+    const { name, image, email, birthday, gender } = props.user;
+    // const color = (() => {
+    //     if (gender === "female") {
+    //         return "red lighten 5"
+    //     }
+    // })()
+    const color = gender === "female" ? "female-color" : "";
 
-        
-            
-                <div className="card">
-                    <div className="card-image">
-                        <img src={image} />
-                        <span className="card-title">{name}</span>
-                    </div>
-                    <div className="card-content">
-                        <p><i className="fas fa-envelope"></i>{emailHider(email)}<br />
-                            <i className="fas fa-birthday-cake"></i>{birthday}</p>
-                    </div>
+    return (<div className={`card ${color}`}>
+        <div className="card-image">
+            <img src={image} />
+            <span className="card-title">{name}</span>
+        </div>
+        <div className="card-content">
+            <p><i className="fas fa-envelope"></i>{emailHider(email)}<br />
+                <i className="fas fa-birthday-cake"></i>{birthday}</p>
+        </div>
 
-                </div>
-            
-      
+    </div>
+
+
     )
 }
 
