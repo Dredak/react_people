@@ -3,22 +3,22 @@ import User from './User';
 import UserCard from './UserCard';
 import Search from './Search';
 import Loader from './Loader'
+import { Switch, Route } from 'react-router-dom';
+
 
 
 class Main extends React.Component {
     render() {
-        const { searchValueUsers, useListLayout, search } = this.props;
+        const { users, searchValueUsers, searchValue, useListLayout, search } = this.props;
 
-        if (!searchValueUsers.length) {
-            return  (<>
-            <Search search={search} />  
-             <Loader />
-             </>)
+        if (!users.length) {
+            return <Loader />
         }
 
         return (
             <>
-                <Search search={search} />
+
+                <Search search={search} searchValue={searchValue} />
                 <div className="clearfix container">
                     {searchValueUsers.map((user, i) => (
                         useListLayout

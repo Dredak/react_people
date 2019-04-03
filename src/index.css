@@ -41,8 +41,11 @@ code {
   clear: both;
 }
 .fas{
-  cursor: pointer;
   margin-right: 20px;
+}
+
+.right{
+  cursor: pointer;
 }
 
 .female-color{
