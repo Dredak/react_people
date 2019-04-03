@@ -49,7 +49,7 @@ class App extends Component {
 
     const { users, useListLayout, searchValue } = this.state;
     const filteredUsers = users.filter((user) => {      //odradi mapiranje usera ponovo nakon novog unosa inputa 
-      return user.name.includes(searchValue);
+      return `${user.name}${user.surname}`.toLowerCase().includes(searchValue.toLowerCase());
     })
     // ako koristim render to iskljucuje component props !!! gledaj route componente
     return (
@@ -57,11 +57,11 @@ class App extends Component {
         <Header onSwitchClick={this.onToggleLayoutClick} useListLayout={useListLayout} refresh={this.onRefreshClick} onAboutClick={this.onAboutClick} />
         <Switch>
           <Route exact path='/' render={() => (<Main users={users} searchValue={searchValue} searchValueUsers={filteredUsers} useListLayout={useListLayout} search={this.onSearchType} />)} />
-          <Route exact path='/about' component={About} />
+          <Route path='/about' component={About} />
         </Switch>
         <Footer />
       </>);
-
+    //render ima return Main kao celu komponentu koju renderuje sa svim propsima
   }
 }
 
