@@ -1,4 +1,3 @@
-//TZV DATA
 import { BASE_USERS_URL } from "../shared/UsersUrl";
 import MyUser from '../entities/MyUser';
 

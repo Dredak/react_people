@@ -13,15 +13,6 @@ code {
     monospace;
 }
 
-/* .root {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-.root {
-  flex: 1 0 auto;
-} */
 #root {
   width: 80%;
   margin: 0 auto;
